@@ -3,7 +3,23 @@ using UnityEngine.SceneManagement;//we're using SceneManager from this namespace
 
 public class CollisionHandler : MonoBehaviour
 {
+
+    // Parameters - for tuning, are usually set in the editor e.g. mainThrust, so things with SerializeField
+    // Cache - e.g. references for readability or speed e.g. Rigidbody or Audiosource
+    // State - private instance (member) variables
+
     [SerializeField]float levelDelay = 2f;
+    [SerializeField] AudioClip rocketCrash;
+    [SerializeField] AudioClip rocketSuccess;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
    void OnCollisionEnter(Collision other)
    {
         switch (other.gameObject.tag)
@@ -23,18 +39,17 @@ public class CollisionHandler : MonoBehaviour
 
         void StartSuccessSequence() //when a player wins there's a delay and movement controls are disabled
         {
-            //Add sound effect for crashing 
-            //Add particle effect on crash
             GetComponent<Movement>().enabled = false;
             Invoke("LoadNextLevel", levelDelay);
+            audioSource.PlayOneShot(rocketSuccess);//Add sound effect for crashing 
+            
         }
 
         void StartCrashSequence() //when a player crashes there's a delay and movement controls are disabled
         {
-            //Add sound effect for crashing 
-            //Add particle effect on crash
             GetComponent<Movement>().enabled = false;
             Invoke("ReloadLevel", levelDelay); //Delays the reload by one second
+            audioSource.PlayOneShot(rocketCrash);//Add particle effect on crash
         }
    }
    void ReloadLevel()

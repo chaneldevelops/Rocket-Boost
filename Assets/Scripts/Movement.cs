@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    Rigidbody rb;// created a reference
+    // Parameters - for tuning, are usually set in the editor e.g. mainThrust, so things with SerializeField
+    // Cache - e.g. references for readability or speed e.g. Rigidbody or Audiosource
+    // State - private instance (member) variables
+
     [SerializeField] float mainThrust = 100;
     [SerializeField] float mainRotate = 50;
+    [SerializeField] AudioClip mainEngine; //main engine audio
+
+    Rigidbody rb;// created a reference
     AudioSource audioSource;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +38,7 @@ public class Movement : MonoBehaviour
                     //The 1 1 1 represent the vector X, Y, & Z
                 if (!audioSource.isPlaying)
                 {
-                    audioSource.Play(); //play is a method fo AudioSource
+                    audioSource.PlayOneShot(mainEngine); //play is a method fo AudioSource, with play one shot can select the music in parameter 
                 }
             } 
             else
