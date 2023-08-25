@@ -14,6 +14,8 @@ public class CollisionHandler : MonoBehaviour
 
     AudioSource audioSource;
 
+    bool isTransitioning = false;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -22,6 +24,10 @@ public class CollisionHandler : MonoBehaviour
 
    void OnCollisionEnter(Collision other)
    {
+        if (isTransitioning) //so if true the info in the switch will not render
+        {
+            return;
+        }
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -39,6 +45,7 @@ public class CollisionHandler : MonoBehaviour
 
         void StartSuccessSequence() //when a player wins there's a delay and movement controls are disabled
         {
+            isTransitioning = true;
             GetComponent<Movement>().enabled = false;
             Invoke("LoadNextLevel", levelDelay);
             audioSource.PlayOneShot(rocketSuccess);//Add sound effect for crashing 
@@ -47,6 +54,7 @@ public class CollisionHandler : MonoBehaviour
 
         void StartCrashSequence() //when a player crashes there's a delay and movement controls are disabled
         {
+            isTransitioning = true;
             GetComponent<Movement>().enabled = false;
             Invoke("ReloadLevel", levelDelay); //Delays the reload by one second
             audioSource.PlayOneShot(rocketCrash);//Add particle effect on crash
