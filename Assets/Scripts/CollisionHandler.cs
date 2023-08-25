@@ -12,6 +12,9 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip rocketCrash;
     [SerializeField] AudioClip rocketSuccess;
 
+    [SerializeField] ParticleSystem particleCrash; //uses .Play to trigger when crashed
+    [SerializeField] ParticleSystem particleSuccess; //.Play to trigger when succeed
+
     AudioSource audioSource;
 
     bool isTransitioning = false;
@@ -49,6 +52,7 @@ public class CollisionHandler : MonoBehaviour
             GetComponent<Movement>().enabled = false;
             Invoke("LoadNextLevel", levelDelay);
             audioSource.PlayOneShot(rocketSuccess);//Add sound effect for crashing 
+            particleSuccess.Play();
             
         }
 
@@ -58,6 +62,7 @@ public class CollisionHandler : MonoBehaviour
             GetComponent<Movement>().enabled = false;
             Invoke("ReloadLevel", levelDelay); //Delays the reload by one second
             audioSource.PlayOneShot(rocketCrash);//Add particle effect on crash
+            particleCrash.Play();
         }
    }
    void ReloadLevel()
