@@ -12,6 +12,13 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainRotate = 50;
     [SerializeField] AudioClip mainEngine; //main engine audio
 
+    [SerializeField] ParticleSystem mainBoostersParticlesFrontLeft;
+    [SerializeField] ParticleSystem mainBoostersParticlesFrontRight;
+    [SerializeField] ParticleSystem mainBoostersParticlesBackLeft;
+    [SerializeField] ParticleSystem mainBoostersParticlesBackRight;
+    [SerializeField] ParticleSystem leftBoosterParticle;
+    [SerializeField] ParticleSystem rightBoosterParticle;
+
     Rigidbody rb;// created a reference
     AudioSource audioSource;
     
@@ -40,11 +47,24 @@ public class Movement : MonoBehaviour
                 {
                     audioSource.PlayOneShot(mainEngine); //play is a method fo AudioSource, with play one shot can select the music in parameter 
                 }
+                MainBoosters();
+
             } 
             else
             {
                 audioSource.Stop(); //Stop is a method of AudioSource
+                //down here is where the stop for the boosters would go but instead
+                //I disabled the loop option which worked for my game design
             }
+        }
+
+        void MainBoosters() //created a method to clean up code for the four boosters
+        {
+            mainBoostersParticlesFrontLeft.Play();
+            mainBoostersParticlesFrontRight.Play();
+            mainBoostersParticlesBackLeft.Play();
+            mainBoostersParticlesBackRight.Play();
+
         }
     
     void ProcessRotation()
@@ -52,10 +72,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             {
                ApplyRotation(mainRotate);
+               leftBoosterParticle.Play();
             }
             else if (Input.GetKey(KeyCode.D)) //If we're not satisfying the condition above then execute
             {
                ApplyRotation(-mainRotate); //this is the negative forward
+               rightBoosterParticle.Play();
             }
 
             void ApplyRotation(float rotationThisFrame)
