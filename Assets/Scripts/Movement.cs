@@ -41,21 +41,31 @@ public class Movement : MonoBehaviour
             {
             if (Input.GetKey(KeyCode.Space))
             {
-                rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime); //Add the force relative to it's transform information 
+                StartThrusting();
+                MainBoosters();
+            } 
+            else
+            {
+                StopThrusting();
+            }
+        }
+
+
+        void StartThrusting()
+        {
+            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime); //Add the force relative to it's transform information 
                     //The 1 1 1 represent the vector X, Y, & Z
                 if (!audioSource.isPlaying)
                 {
                     audioSource.PlayOneShot(mainEngine); //play is a method fo AudioSource, with play one shot can select the music in parameter 
                 }
-                MainBoosters();
+        }
 
-            } 
-            else
-            {
-                audioSource.Stop(); //Stop is a method of AudioSource
-                //down here is where the stop for the boosters would go but instead
-                //I disabled the loop option which worked for my game design
-            }
+         void StopThrusting()
+        {
+             audioSource.Stop(); //Stop is a method of AudioSource
+            //down here is where the stop for the boosters would go but instead
+            //I disabled the loop option which worked for my game design
         }
 
         void MainBoosters() //created a method to clean up code for the four boosters
@@ -79,6 +89,7 @@ public class Movement : MonoBehaviour
                ApplyRotation(-mainRotate); //this is the negative forward
                rightBoosterParticle.Play();
             }
+
 
             void ApplyRotation(float rotationThisFrame)
             {

@@ -20,16 +20,33 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning = false;
+    bool collisionDisable = false; //disable cheat code before publish
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+void Update()
+{
+    RespondToDebugKey();
+}
+
+void RespondToDebugKey()
+{
+    if (Input.GetKeyDown(KeyCode.L))
+    {
+        LoadNextLevel();
+    }
+    else if (Input.GetKeyDown(KeyCode.C))
+    {
+        collisionDisable = !collisionDisable; //this will toggle collision/bool
+    } //disabeling collision is good for testing the level out adding cheat keys
+}
 
    void OnCollisionEnter(Collision other)
    {
-        if (isTransitioning) //so if true the info in the switch will not render
+        if (isTransitioning || collisionDisable) //so if true the info in the switch will not render
         {
             return;
         }
