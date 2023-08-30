@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: caf7c93f8018442c69125cc39fed8205, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.00009181375, g: 0.00009181375, b: 0.00009181375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,21 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &95170174 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4649740104711781582, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-  m_PrefabInstance: {fileID: 1006573866885290896}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &201064873 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4183881604005590482, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-  m_PrefabInstance: {fileID: 1006573866885290896}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &324291510 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 146526478141070919, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-  m_PrefabInstance: {fileID: 1006573866885290896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,11 +216,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!198 &773449116 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5707207091078494226, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-  m_PrefabInstance: {fileID: 1006573866885290896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,8 +251,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -319,16 +299,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &989308163 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1482050026377162057, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-  m_PrefabInstance: {fileID: 1006573866885290896}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1463057554 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6391962798819617075, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-  m_PrefabInstance: {fileID: 1006573866885290896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1819983438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,10 +395,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 146526478141070919, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1006573867025576369, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -476,70 +442,6 @@ PrefabInstance:
     - target: {fileID: 1006573867025576373, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: leftBoosterParticle
-      value: 
-      objectReference: {fileID: 201064873}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: rightBoosterParticle
-      value: 
-      objectReference: {fileID: 989308163}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: mainBoostersParticles
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: mainBoostersParticlesBackLeft
-      value: 
-      objectReference: {fileID: 95170174}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: mainBoostersParticlesBackRight
-      value: 
-      objectReference: {fileID: 773449116}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: mainBoostersParticlesFrontLeft
-      value: 
-      objectReference: {fileID: 324291510}
-    - target: {fileID: 1006573867025576374, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: mainBoostersParticlesFrontRight
-      value: 
-      objectReference: {fileID: 1463057554}
-    - target: {fileID: 1482050026377162057, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1598060282607503869, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: m_Name
-      value: Right Thruster Particles
-      objectReference: {fileID: 0}
-    - target: {fileID: 4083671807727620454, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: m_Name
-      value: Left Thruster Particles
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183881604005590482, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649740104711781582, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772423643773868154, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: m_Name
-      value: Rocket Jet Particles (Left Back)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5707207091078494226, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391962798819617075, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487698824076529031, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
-      propertyPath: m_Name
-      value: Rocket Jet Particles (Front Right)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5757b7e8a1548ee85ab7221390c12e, type: 3}
