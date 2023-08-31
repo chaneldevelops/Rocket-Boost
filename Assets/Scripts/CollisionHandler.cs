@@ -41,7 +41,7 @@ void RespondToDebugKey()
     else if (Input.GetKeyDown(KeyCode.C))
     {
         collisionDisable = !collisionDisable; //this will toggle collision/bool
-    } //disabeling collision is good for testing the level out adding cheat keys
+    } //disabling collision is good for testing the level out adding cheat keys
 }
 
    void OnCollisionEnter(Collision other)
