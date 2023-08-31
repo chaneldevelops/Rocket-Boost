@@ -19,6 +19,7 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (period <= Mathf.Epsilon) {return;} //used Epsilon when comparing exact float values
         float cycles = Time.time / period;//measuring time, the complete lap around the pie circlev(x axis) continues to grow over time
         const float tau = Mathf.PI * 2; // tau is a constant value of 6.283
         float rawSinWave = Mathf.Sin(cycles * tau); //give a value between 1 & -1
