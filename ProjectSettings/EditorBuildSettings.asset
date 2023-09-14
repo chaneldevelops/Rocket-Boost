@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Under.unity
     guid: f54984be421e04e25a07ef09392ce4b5
   - enabled: 1
-    path: Assets/Scenes/TripleThreat.unity
-    guid: 711153ac462f34ccf8320d4fd994e1ff
-  - enabled: 1
-    path: Assets/Scenes/RotatorsEverywhere.unity
+    path: Assets/Scenes/TrippleThreat.unity
     guid: 62bc00dd9c93143138fede48859939cb
+  - enabled: 1
+    path: Assets/Scenes/ByPass.unity
+    guid: a6e8adfb9ab98457e95cc6a7bfb1d5a7
+  - enabled: 1
+    path: Assets/Scenes/TheImpossible.unity
+    guid: 711153ac462f34ccf8320d4fd994e1ff
   m_configObjects: {}
